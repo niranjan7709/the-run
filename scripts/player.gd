@@ -25,6 +25,16 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite2d.flip_h = true
 		
+	#play animation
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite2d.play("ideal")
+		else:
+			animated_sprite2d.play("run")
+		
+		 
+		
+			
 	
 	# applys the movement
 	if direction:
