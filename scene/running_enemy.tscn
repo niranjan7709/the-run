@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dj27rw65p2tyi"]
+
+[ext_resource type="Texture2D" uid="uid://c4hneomotcn7x" path="res://assets/Cute_Fantasy_Free/Enemies/Skeleton.png" id="1_tstny"]
+[ext_resource type="PackedScene" uid="uid://thb6ant3kwu2" path="res://scene/killzone.tscn" id="2_ird66"]
+
+[sub_resource type="GDScript" id="GDScript_tstny"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx4wi"]
+atlas = ExtResource("1_tstny")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a6sx"]
+atlas = ExtResource("1_tstny")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xguh"]
+atlas = ExtResource("1_tstny")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qgfs"]
+atlas = ExtResource("1_tstny")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4m8k"]
+atlas = ExtResource("1_tstny")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx24n"]
+atlas = ExtResource("1_tstny")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_746r8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx4wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a6sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xguh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qgfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4m8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx24n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_746r8"]
+radius = 4.0
+height = 16.0
+
+[node name="running enemy" type="Node2D" unique_id=2045136902]
+script = SubResource("GDScript_tstny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1233181987]
+sprite_frames = SubResource("SpriteFrames_746r8")
+autoplay = "default"
+frame_progress = 0.7777015
+
+[node name="killzone" parent="." unique_id=378787850 instance=ExtResource("2_ird66")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1184736770]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_746r8")

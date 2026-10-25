@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0
-var total_coin = 11
+var total_coin = 25
 
 @onready var scorelabel: Label = $CanvasLayer/scorelabel
 

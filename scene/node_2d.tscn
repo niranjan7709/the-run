@@ -20,7 +20,7 @@ region = Rect2(48, 24, 24, 24)
 atlas = ExtResource("1_guiot")
 region = Rect2(72, 24, 24, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_h0i6k"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_746r8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -41,27 +41,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_746r8"]
-size = Vector2(10, 11)
+size = Vector2(8, 12)
 
-[node name="enemy" type="Node2D" unique_id=1507126517]
+[node name="slime" type="Node2D" unique_id=2146011279]
 script = ExtResource("1_ppd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=991654039]
-position = Vector2(2, -1)
-sprite_frames = SubResource("SpriteFrames_h0i6k")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=285154009]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_746r8")
 autoplay = "default"
-frame_progress = 0.55581987
+frame_progress = 0.7977553
 
 [node name="killzone" parent="." unique_id=378787850 instance=ExtResource("2_ppd22")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1054590604]
-position = Vector2(2, 5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1433049462]
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_746r8")
 
-[node name="RayCast right" type="RayCast2D" parent="." unique_id=2132538422]
-position = Vector2(2, 3)
-target_position = Vector2(9, 1)
+[node name="RayCastright" type="RayCast2D" parent="." unique_id=185083438]
+position = Vector2(0, 6)
+target_position = Vector2(8, 0)
 
-[node name="RayCast left" type="RayCast2D" parent="." unique_id=631078523]
-position = Vector2(2, 3)
-target_position = Vector2(-10, 1)
+[node name="RayCastleft" type="RayCast2D" parent="." unique_id=2048487009]
+position = Vector2(0, 6)
+target_position = Vector2(-8, 0)

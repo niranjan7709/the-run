@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://da7qrhovmbyih"]
+
+[ext_resource type="Texture2D" uid="uid://bnvr443em0gau" path="res://assets/Cute_Fantasy_Free/Animals/Cow/Cow.png" id="1_snucy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qug0s"]
+atlas = ExtResource("1_snucy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd05a"]
+atlas = ExtResource("1_snucy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86iwx"]
+atlas = ExtResource("1_snucy")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_318mt"]
+atlas = ExtResource("1_snucy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_746r8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qug0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd05a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86iwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_318mt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_746r8"]
+size = Vector2(17, 12)
+
+[node name="cow" type="CharacterBody2D" unique_id=642109958]
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1858089737]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_746r8")
+autoplay = "default"
+frame_progress = 0.61371917
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1826899497]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_746r8")

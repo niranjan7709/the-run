@@ -128,3 +128,12 @@ autoplay = "ideal"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661551306]
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_5kiuu")
+
+[node name="dash_timer" type="Timer" parent="." unique_id=690852780]
+wait_time = 0.2
+
+[node name="dash_again_timer" type="Timer" parent="." unique_id=1925313509]
+wait_time = 3.0
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bono700ul6bdw"]
+
+[ext_resource type="Texture2D" uid="uid://c4hneomotcn7x" path="res://assets/Cute_Fantasy_Free/Enemies/Skeleton.png" id="1_8hwyw"]
+[ext_resource type="Script" uid="uid://r21car1qm4tk" path="res://scripts/skelton.gd" id="1_rnvca"]
+[ext_resource type="PackedScene" uid="uid://thb6ant3kwu2" path="res://scene/killzone.tscn" id="2_rnvca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvn11"]
+atlas = ExtResource("1_8hwyw")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crorm"]
+atlas = ExtResource("1_8hwyw")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80upc"]
+atlas = ExtResource("1_8hwyw")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gflex"]
+atlas = ExtResource("1_8hwyw")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_porge"]
+atlas = ExtResource("1_8hwyw")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmxan"]
+atlas = ExtResource("1_8hwyw")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_746r8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvn11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crorm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80upc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gflex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_porge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmxan")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fj1j7"]
+radius = 3.0
+height = 18.0
+
+[node name="skelton" type="Node2D" unique_id=1559857719]
+script = ExtResource("1_rnvca")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=103995093]
+sprite_frames = SubResource("SpriteFrames_746r8")
+autoplay = "default"
+frame_progress = 0.15657492
+
+[node name="killzone" parent="." unique_id=378787850 instance=ExtResource("2_rnvca")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=2056082917]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_fj1j7")
+
+[node name="RayCastright" type="RayCast2D" parent="." unique_id=707012416]
+target_position = Vector2(10, 1)
+
+[node name="RayCastleft" type="RayCast2D" parent="." unique_id=870043523]
+target_position = Vector2(-9, 0)
